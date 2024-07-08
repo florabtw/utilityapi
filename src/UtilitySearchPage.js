@@ -29,17 +29,18 @@ function UtilitySearchPage() {
   const [search, setSearch] = React.useState("");
   const [utilities, setUtilities] = React.useState(null);
 
-  const updateSearchResults = React.useCallback(
-    debounce(async (query, isInclusive) => {
-      const body = await UtilityAPI.search(query, isInclusive);
-      setUtilities(body.utilities);
-    }, 300),
+  const updateSearchResults = React.useMemo(
+    () =>
+      debounce(async (query, isInclusive) => {
+        const body = await UtilityAPI.search(query, isInclusive);
+        setUtilities(body.utilities);
+      }, 300),
     []
   );
 
   React.useEffect(() => {
     updateSearchResults(search, isInclusive);
-  }, [search, isInclusive]);
+  }, [search, isInclusive, updateSearchResults]);
 
   return (
     <div className="page">
