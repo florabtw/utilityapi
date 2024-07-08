@@ -1,13 +1,104 @@
 .App {
-  text-align: center;
-  font-family: 'Helvetica Neue';
+  font-family: "Helvetica Neue";
 }
 
-h1, h2 {
+.page {
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  max-width: 500px;
+}
+
+h1,
+h2 {
+  text-align: center;
   font-weight: normal;
 }
 
-.content {
-  height: 100vh;
-  padding-top: 10%;
+.search {
+  box-shadow: 4px 4px 0px deepskyblue;
+  width: 100%;
+  height: 2rem;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.checkbox {
+  cursor: pointer;
+  display: block;
+  font-size: 1.15rem;
+  margin: 1rem 0 2rem;
+}
+
+.checkbox input {
+  height: 1rem;
+  margin-right: 0.5rem;
+  width: 1rem;
+}
+
+.utilities {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.utility {
+  background: #ffffff;
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.utility:hover[aria-expanded="false"] {
+  transform: translateX(-10px);
+}
+
+.utility:nth-child(6n + 1) {
+  box-shadow: 4px 4px 0px #e40303;
+}
+
+.utility:nth-child(6n + 2) {
+  box-shadow: 4px 4px 0px #ff8c00;
+}
+
+.utility:nth-child(6n + 3) {
+  box-shadow: 4px 4px 0px #ffed00;
+}
+
+.utility:nth-child(6n + 4) {
+  box-shadow: 4px 4px 0px #008026;
+}
+
+.utility:nth-child(6n + 5) {
+  box-shadow: 4px 4px 0px #004cff;
+}
+
+.utility:nth-child(6n) {
+  box-shadow: 4px 4px 0px #732982;
+}
+
+.utility .name {
+  color: #333333;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.utility .details {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.utility .actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.actions a {
+  border: 1px solid black;
+  padding: 0.5rem;
+  color: black;
+  text-decoration: none;
 }
